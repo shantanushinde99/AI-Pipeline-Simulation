@@ -1,0 +1,82 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-ok: var(--ok);
+  --color-ok-soft: var(--ok-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-err: var(--err);
+  --color-err-soft: var(--err-soft);
+  --color-violet: var(--violet);
+}
+
+:root {
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --surface-2: #f0f2f5;
+  --line: #dfe3e9;
+  --fg: #111827;
+  --muted: #586174;
+  --accent: #1d4ed8;
+  --accent-soft: #e6edff;
+  --ok: #15803d;
+  --ok-soft: #e5f5ea;
+  --warn: #a16207;
+  --warn-soft: #fcf3dc;
+  --err: #b91c1c;
+  --err-soft: #fdeaea;
+  --violet: #7c3aed;
+  color-scheme: light;
+}
+.dark {
+  --bg: #0b0e13;
+  --surface: #12161d;
+  --surface-2: #1a1f28;
+  --line: #29303c;
+  --fg: #e5e8ee;
+  --muted: #9aa4b5;
+  --accent: #79a4ff;
+  --accent-soft: #19233b;
+  --ok: #4ade80;
+  --ok-soft: #10281a;
+  --warn: #fbbf24;
+  --warn-soft: #2b220c;
+  --err: #f87171;
+  --err-soft: #2e1315;
+  --violet: #a78bfa;
+  color-scheme: dark;
+}
+
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.react-flow { --xy-background-color: transparent; }
+
+/* KaTeX display math sits inside our own padded boxes. */
+.katex-display { margin: 0; }
